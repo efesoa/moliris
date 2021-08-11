@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+{% block title %}About{% endblock %}
+
+{% block content %}<br><br><br>
+    <div align="center">
+        <img src="/static/images/iris_logo.png">
+        <h1><strong>MOLIRIS</strong></h1>
+    </div><br>
+    <div class="row">
+        <div class="col-md-4" align="center">
+            <p>
+                <img src="/static/images/dataset.png" width="20%" height="20%">
+                <h3> <strong>DataSet</strong></h3>
+            </p>
+            <p align="justify" style="font-family:verdana; font-size: 15px">The Iris Dataset is comprised of 150 observations of iris flowers from three different species. There are 4 measurements of given flowers:
+                sepal length, sepal width, petal length and petal width, all in the same unit of centimeters. The predicted attribute is the species,
+                which is one of setosa, versicolor or virginica.</p>
+        </div>
+        <div class="col-md-4" align="center">
+            <p>
+                <img src="/static/images/similarity.png" width="20%" height="20%">
+                <h3> <strong>Similarity Measures</strong></h3>
+            </p>
+            <p align="justify" style="font-family:verdana; font-size: 15px">
+                Similarity measure is a real-valued
+                function that quantifies the similarity between two objects.
+                <ul style="font-family:verdana; font-size: 15px">
+                    <li>Cosine similarity is a metric used to measure how similar the documents are irrespective of their size.
+                        Mathematically, it measures the cosine of the angle between two vectors projected in a multi-dimensional
+                        space. The smaller the angle, higher the cosine similarity.</li>
+                    <li>Euclidean distance between two points in Euclidean space is the length of a line segment between the two
+                        points. Euclidean Distance represents the shortest distance between two points.</li>
+                    <li>Manhattan distance is a metric in which the distance between two points is the sum of the absolute differences
+                        of their Cartesian coordinates. In a simple way of saying it is the total sum of the difference between the
+                        x-coordinates and y-coordinates.</li>
+                </ul>
+            </p>
+        </div>
+        <div class="col-md-4" align="center">
+            <p>
+                <img src="/static/images/similar_object.png" width="20%" height="20%">
+                <h3> <strong>K Similar Objects</strong></h3>
+            </p>
+            <p align="justify" style="font-family:verdana; font-size: 15px">Displays the K most Similar Objects to the specified object (inputted by the user).</p>
+        </div>
+    </div><br>
+
+    <div>
+        <style>
+            .card {
+              box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+              max-width: 300px;
+              margin: auto;
+              text-align: center;
+
+            }
+
+            .title {
+              color: grey;
+              font-size: 18px;
+            }
+
+            button {
+              border: none;
+              outline: 0;
+              display: inline-block;
+              padding: 8px;
+              color: white;
+              background-color: #000;
+              text-align: center;
+              cursor: pointer;
+              width: 100%;
+              font-size: 18px;
+            }
+
+            button:hover, a:hover {
+              opacity: 0.7;
+            }
+        </style>
+
+
+        <div class="card"><br>
+          <h3>Molinge Efesoa Teddy</h3>
+          <p class="title">Software Engineer</p>
+          <p>University of Buea</p>
+          <p>Computer Science Project</p>
+          <p>Computing Object-Object Similarities</p>
+          <div style="margin: 24px 0;">
+            <a href="https://www.linkedin.com/in/molinge-teddy-8497b41b3"><i class="fa fa-linkedin"></i></a>
+          </div>
+          <p><button onclick="window.location.href='https://www.linkedin.com/in/molinge-teddy-8497b41b3'">Contact</button></p>
+        </div>
+
+    </div>
+
+{% endblock %}

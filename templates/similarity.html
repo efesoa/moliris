@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+{% block title %}Similarity{% endblock %}
+
+{% block content %}
+    <div>
+        <div class="container" style="background-color: beige">
+            <br><br><br><br><h1 class="text-center">Computing Similarity Between Two Objects</h1></br>
+        </div>
+        <div align="center">
+            <img src="/static/images/iris-dataset.png" alt="Specie" style="width:50%;height:50%;">
+        </div>
+        <h3 class="text-center">Specify Two Objects</h3>
+        <div class="row">
+            <form class="form-group" action="{{ url_for('similarity') }}" method='POST'>
+                <div class="col-md-6" align="center">
+                    <h4>First Object</h4>
+                    <p>
+                        <label for="fsl">Sepal Length</label>
+                        <input type="number" step="0.1" min="0" max="8" name="fsl" required>
+                    </p>
+                    <p>
+                        <label for="fsw">Sepal Width</label>
+                        <input type="number" step="0.1" min="0" max="5" name="fsw" required>
+                    </p>
+                    <p>
+                        <label for="fpl">Petal Length</label>
+                        <input type="number" step="0.1" min="0" max="7" name="fpl" required>
+                    </p>
+                    <p>
+                        <label for="fpw">Petal Width</label>
+                        <input type="number" step="0.1" min="0" max="3" name="fpw" required>
+                    </p>
+                </div>
+                <div class="col-md-6" align="center">
+                    <h4>Second Object</h4>
+                    <p>
+                        <label for="ssl">Sepal Length</label>
+                        <input type="number" step="0.1" min="0" max="8" name="ssl" required>
+                    </p>
+                    <p>
+                        <label for="ssw">Sepal Width</label>
+                        <input type="number" step="0.1" min="0" max="5" name="ssw" required>
+                    </p>
+                    <p>
+                        <label for="spl">Petal Length</label>
+                        <input type="number" step="0.1" min="0" max="7" name="spl" required>
+                    </p>
+                    <p>
+                        <label for="spw">Petal Width</label>
+                        <input type="number" step="0.1" min="0" max="3" name="spw" required>
+                    </p>
+                </div>
+                <div align="center">
+                    <button class="btn btn-success" type="submit" name="submit">Compute Similarity</button>
+                    <button class="btn btn-danger" type="reset" name="reset">Reset</button>
+                </div>
+           </form>
+        </div>
+        <div class="row" align="center">
+                    <div class="col-md-6">
+                        <u><h4>First Object</h4></u>
+                        <p>Sepal Length: {{ obj1_sl }}</p>
+                        <p>Sepal Width: {{ obj1_sw }}</p>
+                        <p>Petal Length: {{ obj1_pl }}</p>
+                        <p>Petal Width: {{ obj1_pw }}</p>
+                        <p>The object is <b>{{ predicting_first_object }}</b></p>
+                    </div>
+                    <div class="col-md-6">
+                        <u><h4>Second Object</h4></u>
+                        <p>Sepal Length: {{ obj2_sl }}</p>
+                        <p>Sepal Width: {{ obj2_sw }}</p>
+                        <p>Petal Length: {{ obj2_pl }}</p>
+                        <p>Petal Width: {{ obj2_pw }}</p>
+                        <p>The object is <b>{{ predicting_second_object }}</b></p>
+                    </div>
+                    <div>
+                        <p><h5>The <b>Cosine Similarity</b> is {{ cosine }}</h5></p>
+                        <p><h5>The <b>Euclidean Distance</b> is {{ euclidean }}</h5></p>
+                        <p><h5>The <b>Manhattan Distance</b> is {{ manhattan }}</h5></p>
+                    </div>
+                </div>
+    </div>
+    <div  align="center" style="background-image: url('/static/images/white-gradient.jpg')">
+        <h3 style="background-image: url('/static/images/black-white.jpg')"><b>Iris Dataset</b></h3>
+        <p>{{ data_view | safe }}</p>
+    </div>
+
+
+{% endblock %}

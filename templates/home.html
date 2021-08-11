@@ -1,0 +1,157 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+
+<div class="row carousel" style="background-color: black">
+    <div class="container" style="vertical-align:top">
+      <div id="myCarousel" class="carousel slide" data-ride="carousel" >
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+
+          <div class="item active">
+            <img src="/static/images/c3.jpg" alt="Iris Flower" style="width:50.5%;">
+            <div class="carousel-caption">
+              <h3>Iris Flower</h3>
+              <p>Nature gives life</p>
+            </div>
+          </div>
+
+          <div class="item">
+            <img src="/static/images/c2.jpg" alt="Purple Iris" style="width:60%;">
+            <div class="carousel-caption">
+              <h3>Purple Iris</h3>
+              <p>Thank you, Nature!</p>
+            </div>
+          </div>
+
+          <div class="item">
+            <img src="/static/images/c1.jpg" alt="Blue Iris" style="width:60%;">
+            <div class="carousel-caption">
+              <h3>Blue Iris</h3>
+              <p>We love Iris Flower!</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+</div>
+
+<style>
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+
+.card button:hover {
+  opacity: 0.7;
+}
+
+.carousel {
+    width: 100%;
+}
+
+.button {
+  border-radius: 4px;
+  background-color: midnightblue;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 20px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.buttons {border-radius: 12px;}
+</style>
+
+<div class="row" align="center">
+    <br><br><h1><strong>Compute</strong></h1>
+    <div class="col-md-6">
+        <button class="button buttons" onclick="window.location.href='similarity'"><span>Similarity Measures </span></button>
+    </div>
+    <div class="col-md-6">
+        <button class="button buttons" onclick="window.location.href='similar_objects'"><span>K Similar Objects </span></button>
+    </div>
+</div><br><br>
+
+<strong><h2 style="text-align:center">Iris Species</h2></strong>
+<div class="row">
+    <div class="col-md-4">
+        <div class="card">
+          <img src="/static/images/setosa.jpg" alt="Iris Setosa" style="height:235px; width:100%">
+          <h1>Iris Setosa</h1>
+          <p>Iris setosa, the bristle-pointed iris, is a species of flowering plant in
+              the genus Iris of the family Iridaceae, it belongs the subgenus Limniris
+              and the series Tripetalae.</p>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card">
+          <img src="/static/images/versicolor.jpeg" alt="Iris Versicolor" style="width:100%">
+          <h1>Iris Versicolor</h1>
+          <p>Iris versicolor is a flowering herbaceous perennial plant, growing 10–80 cm
+              (4–31 in) high. It tends to form large clumps from thick, creeping rhizomes.
+              The unwinged, erect stems generally have basal leaves that are more than 1 cm (1⁄2 in) wide.</p>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card">
+          <img src="/static/images/virginica.jpg" alt="Iris Virginica" style="width:100%">
+          <h1>Iris Virginica</h1>
+          <p>Iris virginica, with the common name Virginia iris, is a perennial species of
+              flowering plant, native to eastern North America. It is common along the coastal
+              plain from Florida to Georgia in the Southeastern United States.</p>
+        </div>
+    </div>
+</div><br><br>
+
+{% endblock %}
